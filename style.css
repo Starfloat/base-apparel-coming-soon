@@ -18,13 +18,13 @@
 }
 
 nav {
-  margin-top: 2.5em;
+  margin-top: 3em;
   margin-left: 2em;
-  margin-bottom: 2.5em;
+  margin-bottom: 2em;
 }
 
 body {
-  background-color: var(--gradient1);
+  background-image: var(--gradient1);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -37,8 +37,10 @@ button {
 }
 
 input {
+  background-color: var(--gradient2);
   border-color: var(--desaturated-red);
   border-style: solid;
+  border-width: 0.1em;
   height: 50px;
   width: 300px;
   border-radius: 25px;
@@ -55,6 +57,7 @@ button {
   background-image: var(--gradient2);
   border-radius: 20px;
   border-style: none;
+  box-shadow: 2px 2px 5px;
   padding: 10px 20px;
   height: 50px;
   width: 60px;
@@ -62,10 +65,10 @@ button {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 2.5em;
   font-weight: 300;
   text-transform: uppercase;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.6em;
   text-align: center;
   letter-spacing: 0.25em;
 }
@@ -76,7 +79,11 @@ h1 {
 }
 
 .logo {
-  width: 125px;
+  width: 100px;
+}
+
+.desktop-logo {
+  display: none;
 }
 
 .hero-image {
@@ -112,14 +119,45 @@ h1 {
   display: flex;
   justify-content: center;
   flex-wrap: no-wrap;
-  margin: 2em auto;
+  margin: 2.5em auto;
+  padding-bottom: 5em;
 }
 
 @media (min-width: 1440px) {
+  nav {
+    display: none;
+  }
+
+  h1 {
+    font-size: 5em;
+    text-align: left;
+  }
+
+  .description {
+    text-align: left;
+  }
+
+  .desktop-logo {
+    display: block;
+    width: 250px;
+  }
+
+  .split {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
   .hero-mobile {
     display: none;
   }
+
   .hero-desktop {
     display: block;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
