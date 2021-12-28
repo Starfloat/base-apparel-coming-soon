@@ -14,11 +14,13 @@
   margin: 0;
   padding: 0;
   outline: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 nav {
-  margin-top: 3em;
+  margin-top: 2em;
   margin-left: 2em;
   margin-bottom: 2em;
 }
@@ -45,6 +47,7 @@ input {
   width: 300px;
   border-radius: 25px;
   padding: 10px 20px;
+  margin-left: 1em;
 }
 
 input::placeholder {
@@ -52,7 +55,7 @@ input::placeholder {
   font-weight: 300;
 }
 
-button {
+.submit-image {
   cursor: pointer;
   background-image: var(--gradient2);
   border-radius: 20px;
@@ -102,8 +105,6 @@ h1 {
 }
 
 .main-content {
-  padding-left: 2.5em;
-  padding-right: 2.5em;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -111,35 +112,48 @@ h1 {
 
 .description {
   text-align: center;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
   line-height: 1.5;
-  font-size: 0.85em;
+  font-size: 0.9em;
 }
 
 .form {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: no-wrap;
-  margin: 2.5em auto;
-  padding-bottom: 5em;
+  margin-top: 2em;
+}
+.icon-error {
+  /* visibility: hidden; */
+  transform: translateX(-6em);
+}
+.error-text {
+  color: var(--soft-red);
+  padding: 10px 20px;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   nav {
     display: none;
   }
 
   h1 {
-    font-size: 5em;
+    font-size: 4em;
     text-align: left;
   }
 
   .description {
     text-align: left;
+    margin-right: 2em;
   }
 
   .desktop-logo {
     display: block;
-    width: 250px;
+    width: 175px;
+    margin-top: 3.9em;
+    margin-bottom: 8.5em;
   }
 
   .split {
@@ -154,10 +168,45 @@ h1 {
   .hero-desktop {
     display: block;
   }
-
   .main-content {
+    padding-left: 10em;
+    padding-right: 9em;
+  }
+
+  .description {
+    font-size: 1em;
+  }
+
+  .form {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding-right: 12em;
+  }
+
+  .icon-error {
+    visibility: hidden;
+    margin-left: -9.5em;
+  }
+
+  input {
+    background-color: var(--gradient2);
+    border-color: var(--desaturated-red);
+    border-style: solid;
+    border-width: 0.1em;
+    height: 60px;
+    width: 425px;
+    border-radius: 25px;
+    padding: 10px 20px;
+  }
+
+  .submit-image {
+    cursor: pointer;
+    background-color: var(--gradient2);
+    border-radius: 30px;
+    border-style: none;
+    box-shadow: 2px 2px 5px;
+    padding: 10px 20px;
+    height: 60px;
+    width: 100px;
+    margin-left: -4.5em;
   }
 }
